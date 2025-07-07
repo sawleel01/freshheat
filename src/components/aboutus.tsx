@@ -3,8 +3,16 @@ import Link from "next/link";
 
 export default function AboutUs() {
   return (
-    <section className="bg-white py-16 relative overflow-hidden">
-      <div className="max-w-5xl mx-auto px-4 text-center">
+    <section
+      className="bg-white py-16 relative overflow-hidden min-h-[500px]"
+      style={{
+        backgroundImage: `url('/left.png'), url('/right.png')`,
+        backgroundPosition: "left center, right center",
+        backgroundRepeat: "no-repeat, no-repeat",
+        backgroundSize: "auto 100%, auto 100%",
+      }}
+    >
+      <div className="max-w-5xl mx-auto px-4 text-center relative z-10">
         {/* Top icon + label */}
         <div className="flex items-center justify-center space-x-2 mb-4">
           <Utensils className="text-orange-500 w-5 h-5" />
