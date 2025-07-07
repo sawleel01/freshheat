@@ -1,0 +1,105 @@
+import Image from "next/image";
+import { Share2 } from "lucide-react";
+
+export default function ChefSection() {
+  const chefs = [
+    {
+      name: "Ralph Edwards",
+      role: "Chef Lead",
+      image: "/placeholder.svg?height=300&width=300",
+    },
+    {
+      name: "Leslie Alexander",
+      role: "Chef Assistant",
+      image: "/placeholder.svg?height=300&width=300",
+    },
+    {
+      name: "Ronald Richards",
+      role: "Chef Assistant",
+      image: "/placeholder.svg?height=300&width=300",
+    },
+  ];
+
+  return (
+    <section className="py-16 px-4 bg-gray-50 relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-8 left-8 w-16 h-16 bg-red-500 rounded-full opacity-80"></div>
+      <div className="absolute top-12 left-20 w-8 h-12 bg-green-500 rounded-full opacity-60 transform rotate-12"></div>
+      <div className="absolute top-6 left-16 w-6 h-6 bg-green-400 rounded-full opacity-70"></div>
+
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
+              <span className="text-white text-sm">🍔</span>
+            </div>
+            <span className="text-orange-500 font-semibold text-sm uppercase tracking-wider">
+              OUR CHEFS
+            </span>
+            <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
+              <span className="text-white text-sm">🍔</span>
+            </div>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+            Meet Our Expert Chefs
+          </h2>
+        </div>
+
+        {/* Chef Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+          {chefs.map((chef, index) => (
+            <div key={index} className="text-center group">
+              {/* Chef Image Container */}
+              <div className="relative mb-6">
+                <div className="relative w-80 h-80 mx-auto">
+                  {/* Decorative background shape */}
+                  <div
+                    className={`absolute inset-0 rounded-t-full ${
+                      index === 0
+                        ? "bg-gradient-to-br from-red-400 to-orange-400"
+                        : index === 1
+                        ? "bg-gradient-to-br from-orange-400 to-yellow-400"
+                        : "bg-gradient-to-br from-red-500 to-pink-400"
+                    } transform rotate-3 group-hover:rotate-6 transition-transform duration-300`}
+                  ></div>
+
+                  {/* Chef Image */}
+                  <div className="absolute inset-2 bg-gray-800 rounded-t-full overflow-hidden">
+                    <Image
+                      src={chef.image || "/placeholder.svg"}
+                      alt={chef.name}
+                      width={300}
+                      height={300}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+
+                  {/* Share Icon */}
+                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <Share2 className="w-5 h-5 text-white" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Chef Info */}
+              <div className="space-y-2">
+                <h3 className="text-2xl font-bold text-gray-900">
+                  {chef.name}
+                </h3>
+                <p className="text-gray-600 font-medium">{chef.role}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Scroll to top button */}
+      <div className="fixed bottom-8 right-8">
+        <button className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center shadow-lg hover:bg-orange-600 transition-colors duration-300">
+          <span className="text-white text-xl">↑</span>
+        </button>
+      </div>
+    </section>
+  );
+}
