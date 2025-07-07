@@ -73,10 +73,34 @@ export default function Footer() {
               lacinia curabitur lacinia mollis
             </p>
             <div className="flex items-center gap-4 mt-4 p-1">
-              <Facebook className="h-6 w-6 border-2 text-white " />
-              <Twitter className="h-6 w-6 border-2 text-white" />
-              <Linkedin className="h-6 w-6 border-2 text-white" />
-              <Youtube className="h-6 w-6 border-2 text-white" />
+              <a
+                href="https://www.facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Facebook className="h-6 w-6 border-2 text-white" />
+              </a>
+              <a
+                href="https://www.twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Twitter className="h-6 w-6 border-2 text-white" />
+              </a>
+              <a
+                href="https://www.linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Linkedin className="h-6 w-6 border-2 text-white" />
+              </a>
+              <a
+                href="https://www.youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Youtube className="h-6 w-6 border-2 text-white" />
+              </a>
             </div>
           </div>
           {/* Quick Links */}

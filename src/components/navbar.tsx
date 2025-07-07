@@ -15,6 +15,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function FresheatNavbar() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -102,8 +103,8 @@ export default function FresheatNavbar() {
     <header className="w-full flex">
       {/* Logo Section - Full Height White Column */}
       <div
-        className="bg-white flex items-center justify-center px-6"
-        style={{ minWidth: "280px" }}
+        className="bg-white flex items-center justify-center px-6 min-w-[280px]"
+        // style={{ minWidth: "280px" }}
       >
         <Link href="/" className="flex items-center">
           <img
