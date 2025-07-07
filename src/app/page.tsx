@@ -4,16 +4,33 @@ import LimitedTimeOffers from "@/components/limitedtimeoffer";
 import BestSellingDishes from "@/components/bestsellingdishes";
 import AboutUs from "@/components/aboutus";
 import ChefSection from "@/components/chefsection";
+import Testimonials from "@/components/testimonials";
+import AnimatedCursor from "react-animated-cursor";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
-    <div>
-      <Navbar />
-      <PopularFoodItems />
-      <LimitedTimeOffers />
-      <AboutUs />
-      <BestSellingDishes />
-      <ChefSection />
-    </div>
+    <>
+      <AnimatedCursor
+        innerSize={8}
+        outerSize={35}
+        innerScale={1}
+        outerScale={2}
+        outerAlpha={0.2}
+        innerStyle={{ backgroundColor: "#ff0000" }} // Red inner cursor
+        outerStyle={{ border: "2px solid #ff0000" }} // Red outer ring
+        clickables={["a", "button", "input", "textarea", "select", "label"]}
+      />
+      <div>
+        <Navbar />
+        <PopularFoodItems />
+        <LimitedTimeOffers />
+        <AboutUs />
+        <BestSellingDishes />
+        <ChefSection />
+        <Testimonials />
+        <Footer />
+      </div>
+    </>
   );
 }
