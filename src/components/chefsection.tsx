@@ -6,27 +6,31 @@ export default function ChefSection() {
     {
       name: "Ralph Edwards",
       role: "Chef Lead",
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/chef.png?height=300&width=300",
     },
     {
       name: "Leslie Alexander",
       role: "Chef Assistant",
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/chef.png?height=300&width=300",
     },
     {
       name: "Ronald Richards",
       role: "Chef Assistant",
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/chef.png?height=300&width=300",
     },
   ];
 
   return (
-    <section className="py-16 px-4 bg-gray-50 relative overflow-hidden">
+    <section className="py-16 px-4 bg-gray-200 relative overflow-hidden">
       {/* Decorative elements */}
-      <div className="absolute top-8 left-8 w-16 h-16 bg-red-500 rounded-full opacity-80"></div>
-      <div className="absolute top-12 left-20 w-8 h-12 bg-green-500 rounded-full opacity-60 transform rotate-12"></div>
-      <div className="absolute top-6 left-16 w-6 h-6 bg-green-400 rounded-full opacity-70"></div>
-
+      <div className="w-40 h-40 absolute left-5 top-10 z-50 float-vertical">
+        <Image
+          src="/halftomato.png"
+          alt="Half tomato and 2 leaves"
+          fill
+          className="object-contain"
+        />
+      </div>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -94,12 +98,7 @@ export default function ChefSection() {
         </div>
       </div>
 
-      {/* Scroll to top button */}
-      <div className="fixed bottom-8 right-8">
-        <button className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center shadow-lg hover:bg-orange-600 transition-colors duration-300">
-          <span className="text-white text-xl">↑</span>
-        </button>
-      </div>
+      <div className=""></div>
     </section>
   );
 }

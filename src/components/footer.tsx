@@ -1,3 +1,5 @@
+"use client";
+
 import {
   ArrowRight,
   ArrowUp,
@@ -16,6 +18,13 @@ import { Checkbox } from "@radix-ui/react-checkbox";
 import { Input } from "./ui/input";
 
 export default function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="min-h-screen relative bg-slate-900 pt-32">
       {/* COntact Bar */}
@@ -62,10 +71,10 @@ export default function Footer() {
           <div>
             <div>
               <Image
-                src="/file.svg"
+                src="/logoWhite.svg"
                 alt="Logo of the Company"
-                width={128}
-                height={62}
+                width={200}
+                height={100}
               />
             </div>
             <p className="text-white text-sm mt-4 pr-12">
@@ -267,13 +276,14 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
       {/* Back to top button */}
       <Button
-        className="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-orange-500 hover:bg-orange-600 shadow-lg"
+        onClick={scrollToTop}
+        className="fixed bottom-6 right-6 w-12 h-12 rounded-lg bg-orange-500 hover:bg-orange-600 shadow-lg z-60"
         size="sm"
+        aria-label="Scroll to top"
       >
-        <ArrowUp className="w-5 h-5" />
+        <ArrowUp className="w-4 h-4 font-extrabold" />
       </Button>
     </div>
   );

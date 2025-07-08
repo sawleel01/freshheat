@@ -9,6 +9,8 @@ import AnimatedCursor from "react-animated-cursor";
 import Footer from "@/components/footer";
 import Welcome from "@/components/welcome";
 import Special from "@/components/special";
+import Timer from "@/components/timer";
+import Imageslider from "@/components/imagemarquee";
 
 export default function Home() {
   return (
@@ -23,7 +25,7 @@ export default function Home() {
         outerStyle={{ border: "2px solid #ff0000" }} // Red outer ring
         clickables={["a", "button", "input", "textarea", "select", "label"]}
       />
-      <div>
+      <div className="bg-gray-200">
         <Navbar />
         <Welcome />
         <PopularFoodItems />
@@ -31,7 +33,9 @@ export default function Home() {
         <AboutUs />
         <BestSellingDishes />
         <Special />
+        <Timer />
         <ChefSection />
+        <Imageslider />
         <Testimonials />
         <Footer />
       </div>
