@@ -111,7 +111,7 @@ export default function PopularFoodItems() {
 
         {/* Food Carousel */}
         <div className="relative max-w-6xl mx-auto">
-          <div className="grid grid-cols-4 gap-8">
+          <div className="grid grid-cols-4 gap-8 ">
             {getVisibleItems().map((item, currentIndex) => (
               <motion.div
                 key={`${item.id}-${currentIndex}`}
@@ -124,7 +124,7 @@ export default function PopularFoodItems() {
                   damping: 30,
                   duration: 3,
                 }}
-                className="flex flex-col items-center text-center"
+                className="flex flex-col items-center text-center shadow-lg rounded-4xl"
               >
                 {/* Food Image with Animated Dotted Circle */}
                 <div className="relative mb-6">
@@ -175,6 +175,22 @@ export default function PopularFoodItems() {
             ))}
           </div>
         </div>
+      </div>
+      <div className="w-40 h-40 absolute bottom-24 left-0 z-50 float-vertical">
+        <Image
+          src="/bwburger.png"
+          alt="black and white burger outline"
+          fill
+          className="object-contain"
+        />
+      </div>
+      <div className="w-40 h-40 absolute top-24 right-5 z-50 slide-animation">
+        <Image
+          src="/bwpizzaslice.png"
+          alt="Black and white pizza slice"
+          fill
+          className="object-contain"
+        />
       </div>
     </div>
   );

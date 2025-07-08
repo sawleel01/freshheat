@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
-import { Heart } from "lucide-react";
+import { Heart, ShoppingCart, Eye, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 export default function BestSellingDishes() {
   const dishes = [
@@ -8,63 +11,73 @@ export default function BestSellingDishes() {
       id: 1,
       name: "Chicken Fried Rice",
       price: "$100.99",
-      image: "/placeholder.svg?height=200&width=200",
+      description: "Delicious fried rice with chicken and fresh veggies.",
+      image: "/food.png?height=200&width=200",
     },
     {
       id: 2,
       name: "Chinese Pasta",
       price: "$15.99",
-      image: "/placeholder.svg?height=200&width=200",
+      description: "Savory Chinese-style pasta with special sauce.",
+      image: "/food.png?height=200&width=200",
     },
     {
       id: 3,
       name: "Chicken Pizza",
       price: "$26.99",
-      image: "/placeholder.svg?height=200&width=200",
+      description: "Cheesy pizza topped with grilled chicken pieces.",
+      image: "/food.png?height=200&width=200",
     },
     {
       id: 4,
       name: "Chicken Noodles",
       price: "$39.00",
-      image: "/placeholder.svg?height=200&width=200",
+      description: "Stir-fried noodles with chicken and fresh herbs.",
+      image: "/food.png?height=200&width=200",
     },
     {
       id: 5,
       name: "Grilled Chicken",
       price: "$20.99",
-      image: "/placeholder.svg?height=200&width=200",
+      description: "Perfectly grilled chicken with smoky flavor.",
+      image: "/food.png?height=200&width=200",
     },
   ];
+
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedDish, setSelectedDish] = useState<(typeof dishes)[0] | null>(
+    null
+  );
+
+  function openModal(dish: (typeof dishes)[0]) {
+    setSelectedDish(dish);
+    setModalOpen(true);
+  }
+
+  function closeModal() {
+    setModalOpen(false);
+    setSelectedDish(null);
+  }
 
   return (
     <div className="min-h-screen bg-gray-100 relative overflow-hidden">
       {/* Decorative Elements */}
-      <div className="absolute top-4 left-4 w-16 h-16 opacity-30">
+      <div className="absolute bottom-0 left-0 w-40 h-40">
         <Image
-          src="/placeholder.svg?height=64&width=64"
+          src="/lettucemushroom.png?"
           alt="Leaf decoration"
-          width={64}
-          height={64}
+          width={200}
+          height={100}
           className="object-contain"
         />
       </div>
 
-      <div className="absolute bottom-20 left-8 w-20 h-20 opacity-40">
+      <div className="absolute top-16 right-8 w-64 h-64 float-vertical">
         <Image
-          src="/placeholder.svg?height=80&width=80"
-          alt="Leaf decoration"
-          width={80}
-          height={80}
-          className="object-contain"
-        />
-      </div>
-
-      <div className="absolute top-8 right-8 w-32 h-32 opacity-60">
-        <Image
-          src="/placeholder.svg?height=128&width=128"
+          src="/brokenchilli.png"
           alt="Chili pepper decoration"
-          width={128}
-          height={128}
+          width={200}
+          height={200}
           className="object-contain"
         />
       </div>
@@ -92,9 +105,26 @@ export default function BestSellingDishes() {
               key={dish.id}
               className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:bg-black relative"
             >
-              {/* Heart Icon */}
-              <div className="absolute top-4 right-4 w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
-                <Heart className="w-4 h-4 text-white fill-white" />
+              {/* Icon Stack */}
+              <div className="absolute top-4 right-4 flex flex-col items-center gap-2">
+                {/* Heart Icon */}
+                <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center z-30">
+                  <Heart className="w-4 h-4 text-white fill-white" />
+                </div>
+
+                {/* Extra Icons on Hover */}
+                <div className="flex flex-col gap-2 transition-all duration-300 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0">
+                  <div className="w-7 h-7 bg-white rounded-full flex items-center justify-center shadow">
+                    <ShoppingCart className="w-4 h-4 text-red-500" />
+                  </div>
+                  <button
+                    onClick={() => openModal(dish)}
+                    className="w-7 h-7 bg-white rounded-full flex items-center justify-center shadow"
+                    aria-label={`View details of ${dish.name}`}
+                  >
+                    <Eye className="w-4 h-4 text-red-500" />
+                  </button>
+                </div>
               </div>
 
               {/* Dish Image */}
@@ -131,6 +161,50 @@ export default function BestSellingDishes() {
           </Button>
         </div>
       </div>
+
+      {/* Modal Overlay */}
+      {/* Modal Overlay with blur background */}
+      {modalOpen && selectedDish && (
+        <div
+          className="fixed inset-0 bg-transparent backdrop-blur-sm flex items-center justify-center z-50"
+          onClick={closeModal}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-title"
+        >
+          <div
+            className="bg-white bg-opacity-90 rounded-lg p-6 max-w-md mx-4 relative"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={closeModal}
+              className="absolute top-3 right-3 text-gray-600 hover:text-gray-900"
+              aria-label="Close modal"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <h2
+              id="modal-title"
+              className="text-2xl font-bold mb-4 text-center"
+            >
+              {selectedDish.name}
+            </h2>
+            <div className="w-48 h-48 mx-auto rounded-full overflow-hidden mb-4">
+              <Image
+                src={selectedDish.image}
+                alt={selectedDish.name}
+                width={192}
+                height={192}
+                className="object-cover"
+              />
+            </div>
+            <p className="text-gray-700 mb-2">{selectedDish.description}</p>
+            <p className="text-red-500 font-bold text-lg">
+              {selectedDish.price}
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

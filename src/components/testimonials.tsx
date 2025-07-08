@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { Play } from "lucide-react";
 import Marquee from "react-fast-marquee";
@@ -8,21 +10,24 @@ const comments = [
     name: "John Doe",
     Occupation: "Web Developer",
     comment: "Amazing food and great service!",
-    image: "/placeholder.svg?height=100&width=100",
+    image: "/food.png?height=100&width=100",
+    rating: 5,
   },
   {
     id: 2,
     name: "Jane Smith",
     Occupation: "Web Developer",
     comment: "The best dining experience I've ever had.",
-    image: "/placeholder.svg?height=100&width=100",
+    image: "/food.png?height=100&width=100",
+    rating: 4,
   },
   {
     id: 3,
-    Occupation: "Web Developer",
     name: "Alice Johnson",
+    Occupation: "Web Developer",
     comment: "Loved the ambiance and the food was delicious!",
-    image: "/placeholder.svg?height=100&width=100",
+    image: "/food.png?height=100&width=100",
+    rating: 5,
   },
 ];
 
@@ -49,6 +54,7 @@ export default function Testimonials() {
                   <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border-2 border-white/30">
                     <Play className="w-8 h-8 text-white ml-1" fill="white" />
                   </div>
+
                   {/* Circular text around play button */}
                   <div className="absolute inset-0 w-20 h-20">
                     <svg
@@ -73,7 +79,7 @@ export default function Testimonials() {
             </div>
           </div>
 
-          {/* Right side - Testimonials overlapping left image */}
+          {/* Right side - Testimonials */}
           <div className="relative z-30 -ml-16">
             {/* Heading */}
             <div className="inline-flex items-center gap-2 text-orange-400 pl-32 font-bold mb-4">
@@ -108,9 +114,30 @@ export default function Testimonials() {
                         <p className="text-sm text-gray-800">
                           {comment.Occupation}
                         </p>
+
+                        {/* ⭐ Star Ratings */}
+                        <div className="flex gap-1 mt-1">
+                          {[...Array(5)].map((_, i) => (
+                            <svg
+                              key={i}
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill={i < comment.rating ? "#FACC15" : "none"} // yellow-400
+                              viewBox="0 0 24 24"
+                              stroke="#FACC15"
+                              className="w-5 h-5"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l2.087 6.43h6.763c.969 0 1.371 1.24.588 1.81l-5.479 3.985 2.087 6.43c.3.921-.755 1.688-1.539 1.117L12 18.347l-5.459 3.352c-.783.57-1.838-.196-1.539-1.117l2.087-6.43-5.479-3.985c-.783-.57-.38-1.81.588-1.81h6.763l2.087-6.43z"
+                              />
+                            </svg>
+                          ))}
+                        </div>
                       </div>
                     </div>
-                    <p className="text-gray-300 text-3xl">{comment.comment}</p>
+                    <p className="text-gray-600 text-3xl">{comment.comment}</p>
                   </div>
                 ))}
               </Marquee>
@@ -118,25 +145,14 @@ export default function Testimonials() {
           </div>
         </div>
       </div>
+
+      {/* Bottom Scrolling Text */}
       <div className="w-full">
         <Marquee className="overflow-visible min-h-[14rem]">
           {["Burger", "Burger", "Burger", "Burger"].map((text, idx) => (
             <span
               key={idx}
-              className="
-              text-9xl
-              font-bold
-              mr-12
-              mb-5
-              transition-colors duration-700 ease-in-out
-              uppercase
-              leading-tight
-              whitespace-nowrap
-              text-gray-600
-              border-b-3 border-transparent
-              hover:text-red-500
-              hover:border-red-500
-            "
+              className="text-9xl font-bold mr-12 mb-5 uppercase leading-tight whitespace-nowrap text-gray-600 border-b-3 border-transparent hover:text-red-500 hover:border-red-500 transition-colors duration-700 ease-in-out"
             >
               {text}
             </span>

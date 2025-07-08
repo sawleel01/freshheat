@@ -1,14 +1,14 @@
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 export default function Special() {
   return (
     <div
-      className="h-[600px] bg-cover bg-center bg-no-repeat mb-20"
+      className="h-[600px] bg-cover bg-center bg-no-repeat mb-20 relative"
       style={{ backgroundImage: "url('/bg.png')" }}
     >
       <div className="grid grid-cols-2 w-full h-full">
+        {/* Left Text Column */}
         <div className="flex flex-col mx-auto my-auto text-[16px]">
           <div className="text-red-700 font-extrabold uppercase mb-3 text-xl">
             Welcome Fresheat
@@ -25,20 +25,20 @@ export default function Special() {
           </button>
         </div>
 
-        <div className="relative flex justify-center items-center">
-          {/* <motion.div
-            className="w-40 h-40 relative"
-            animate={{ x: [0, 40, 0] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <Image
-              src="/45pizzaoff.png"
-              alt="45% off on pizza"
-              fill
-              className="object-contain"
-            />
-          </motion.div> */}
+        {/* Right Image */}
+        <div className="w-160 h-160 relative slide-animation">
+          <Image
+            src="/45pizzaoff.png"
+            alt="45% off on pizza"
+            fill
+            className="object-contain"
+          />
         </div>
+      </div>
+
+      {/* Floating Tomato */}
+      <div className="w-40 h-40 absolute bottom-5 right-1 z-50 float-vertical">
+        <Image src="/tomato.png" alt="Tomato" fill className="object-contain" />
       </div>
     </div>
   );

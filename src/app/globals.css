@@ -120,3 +120,31 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes slideSideways {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(40px);
+  }
+}
+
+.slide-animation {
+  animation: slideSideways 5s ease-in-out infinite;
+}
+
+@keyframes floatVertical {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px); /* Adjust the height as needed */
+  }
+}
+
+.float-vertical {
+  animation: floatVertical 5s ease-in-out infinite;
+}
