@@ -7,6 +7,8 @@ import ChefSection from "@/components/chefsection";
 import Testimonials from "@/components/testimonials";
 import AnimatedCursor from "react-animated-cursor";
 import Footer from "@/components/footer";
+import Welcome from "@/components/welcome";
+import Special from "@/components/special";
 
 export default function Home() {
   return (
@@ -23,10 +25,12 @@ export default function Home() {
       />
       <div>
         <Navbar />
+        <Welcome />
         <PopularFoodItems />
         <LimitedTimeOffers />
         <AboutUs />
         <BestSellingDishes />
+        <Special />
         <ChefSection />
         <Testimonials />
         <Footer />

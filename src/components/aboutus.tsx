@@ -1,5 +1,9 @@
+"use client";
+
 import { Utensils } from "lucide-react"; // 🍽️ icon
 import Link from "next/link";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function AboutUs() {
   return (
@@ -12,6 +16,44 @@ export default function AboutUs() {
         backgroundSize: "auto 100%, auto 100%",
       }}
     >
+      {/* Rotating image on top of left.png */}
+      <motion.div
+        className="absolute left-12 top-1/2 transform -translate-y-1/2 z-0"
+        animate={{ rotate: 360 }}
+        transition={{
+          repeat: Infinity,
+          duration: 20,
+          ease: "linear",
+        }}
+      >
+        <Image
+          src="/noodelsrotate.png"
+          alt="Rotating Left"
+          width={400}
+          height={400}
+          className="object-contain"
+        />
+      </motion.div>
+
+      {/* Rotating image on top of right.png */}
+      <motion.div
+        className="absolute right-12 top-1/2 transform -translate-y-1/2 z-0"
+        animate={{ rotate: 360 }}
+        transition={{
+          repeat: Infinity,
+          duration: 20,
+          ease: "linear",
+        }}
+      >
+        <Image
+          src="/prawnrotate.png"
+          alt="Rotating Right"
+          width={400}
+          height={400}
+          className="object-contain"
+        />
+      </motion.div>
+
       <div className="max-w-5xl mx-auto px-4 text-center relative z-10">
         {/* Top icon + label */}
         <div className="flex items-center justify-center space-x-2 mb-4">
@@ -29,7 +71,7 @@ export default function AboutUs() {
         </h2>
 
         {/* Subtext */}
-        <p className="text-gray-500 max-w-2xl mx-auto mb-8">
+        <p className="text-gray-500 max-w-2xl mx-auto mb-8 px-8">
           It is a long established fact that a reader will be distracted by the
           readable content of a page when looking at layout the point
           established fact that

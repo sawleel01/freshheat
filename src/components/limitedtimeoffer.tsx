@@ -2,10 +2,11 @@
 
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function LimitedTimeOffers() {
   return (
-    <div className="min-h-screen bg-gray-100 py-8">
+    <div className="bg-gray-100 pt-8 pb-60">
       <div className="container mx-auto px-4">
         <div className="flex gap-4 max-w-7xl mx-auto justify-center">
           {/* Card 1 - Spicy Fried Chicken */}
@@ -41,10 +42,24 @@ export default function LimitedTimeOffers() {
               </button>
             </div>
 
-            {/* Food Image */}
-            <div className="absolute top-8 right-16 w-48 h-32">
+            {/* New animated image above the food image */}
+            <motion.div
+              className="absolute top-6 right-16 w-24 h-24"
+              animate={{ x: [0, 10, 0] }} // slide right 10px and back
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            >
               <Image
-                src="/placeholder.svg?height=150&width=200"
+                src="/50percent.png"
+                alt="50% off"
+                fill
+                className="object-contain"
+              />
+            </motion.div>
+
+            {/* Food Image */}
+            <div className="absolute top-16 right-16 w-44 h-44">
+              <Image
+                src="/BCFcombo.png"
                 alt="Spicy fried chicken with fries and drink"
                 fill
                 className="object-contain"
@@ -85,10 +100,24 @@ export default function LimitedTimeOffers() {
               </button>
             </div>
 
-            {/* Food Image */}
-            <div className="absolute top-8 right-16 w-48 h-32">
+            {/* New animated image above the food image */}
+            <motion.div
+              className="absolute top-6 right-16 w-24 h-24"
+              animate={{ x: [0, 10, 0] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            >
               <Image
-                src="/placeholder.svg?height=150&width=200"
+                src="/50percent.png"
+                alt="50% off"
+                fill
+                className="object-contain"
+              />
+            </motion.div>
+
+            {/* Food Image */}
+            <div className="absolute top-16 right-16 w-44 h-44">
+              <Image
+                src="/crispyburger.png"
                 alt="Special burger with fresh ingredients"
                 fill
                 className="object-contain"
@@ -129,10 +158,24 @@ export default function LimitedTimeOffers() {
               </button>
             </div>
 
-            {/* Food Image */}
-            <div className="absolute top-8 right-16 w-48 h-32">
+            {/* New animated image above the food image */}
+            <motion.div
+              className="absolute top-6 right-12 w-24 h-24"
+              animate={{ x: [0, 10, 0] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            >
               <Image
-                src="/placeholder.svg?height=150&width=200"
+                src="/50percent.png"
+                alt="50% off"
+                fill
+                className="object-contain"
+              />
+            </motion.div>
+
+            {/* Food Image */}
+            <div className="absolute top-16 right-12 w-44 h-44">
+              <Image
+                src="/chickenroll.png"
                 alt="Special chicken roll wraps"
                 fill
                 className="object-contain"
