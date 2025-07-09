@@ -67,7 +67,7 @@ export default function Welcome() {
           >
             {/* Text Column */}
             <div className="flex flex-col justify-center h-full px-2">
-              <span className="text-orange-500 mb-2 block text-xl font-extrabold">
+              <span className="text-orange-500 mb-2 block text-xl font-extrabold uppercase">
                 {slides[current].title}
               </span>
               <h1 className="text-[96px] font-bold mb-6 text-white uppercase leading-tight max-w-5xl break-words">

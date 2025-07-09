@@ -1,16 +1,17 @@
-import PopularFoodItems from "@/components/popularfooditems";
-import Navbar from "@/components/navbar";
-import LimitedTimeOffers from "@/components/limitedtimeoffer";
-import BestSellingDishes from "@/components/bestsellingdishes";
-import AboutUs from "@/components/aboutus";
-import ChefSection from "@/components/chefsection";
-import Testimonials from "@/components/testimonials";
+import PopularFoodItems from "@/components/HomePage/popularfooditems";
+import Navbar from "@/components/HomePage/navbar";
+import LimitedTimeOffers from "@/components/HomePage/limitedtimeoffer";
+import BestSellingDishes from "@/components/HomePage/bestsellingdishes";
+import AboutUs from "@/components/HomePage/aboutus";
+import ChefSection from "@/components/HomePage/chefsection";
+import Testimonials from "@/components/HomePage/testimonials";
 import AnimatedCursor from "react-animated-cursor";
-import Footer from "@/components/footer";
-import Welcome from "@/components/welcome";
-import Special from "@/components/special";
-import Timer from "@/components/timer";
-import Imageslider from "@/components/imagemarquee";
+import Footer from "@/components/HomePage/footer";
+import Welcome from "@/components/HomePage/welcome";
+import Special from "@/components/HomePage/special";
+import Timer from "@/components/HomePage/timer";
+import Imageslider from "@/components/HomePage/imagemarquee";
+import NewsSlider from "@/components/HomePage/latestnews/news slider";
 
 export default function Home() {
   return (
@@ -37,6 +38,7 @@ export default function Home() {
         <ChefSection />
         <Imageslider />
         <Testimonials />
+        <NewsSlider />
         <Footer />
       </div>
     </>

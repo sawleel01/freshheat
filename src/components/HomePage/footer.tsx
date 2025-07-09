@@ -13,9 +13,11 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import React from "react";
-import { Button } from "./ui/button";
+
 import { Checkbox } from "@radix-ui/react-checkbox";
-import { Input } from "./ui/input";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
+
 
 export default function Footer() {
   const scrollToTop = () => {
