@@ -26,7 +26,7 @@ export default function Home() {
         outerStyle={{ border: "2px solid #ff0000" }} // Red outer ring
         clickables={["a", "button", "input", "textarea", "select", "label"]}
       />
-      <div className="bg-gray-200">
+      <div className="bg-stone-100">
         <Navbar />
         <Welcome />
         <PopularFoodItems />

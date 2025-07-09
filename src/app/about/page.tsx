@@ -1,4 +1,4 @@
-import AboutHeroSection from "@/components/aboutus/heroSection";
+import AboutHeroSection from "@/components/AboutUs/heroSection";
 import AboutUs from "../../components/HomePage/aboutus";
 import LimitedTimeOffers from "../../components/HomePage/limitedtimeoffer";
 import Navbar from "@/components/HomePage/navbar";
@@ -21,7 +21,7 @@ export default function AboutUsPage() {
         outerStyle={{ border: "2px solid #ff0000" }} // Red outer ring
         clickables={["a", "button", "input", "textarea", "select", "label"]}
       />
-      <div>
+      <div className="bg-stone-100">
         <Navbar />
         <AboutHeroSection />
         <LimitedTimeOffers />

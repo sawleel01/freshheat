@@ -9,7 +9,6 @@ import {
   Linkedin,
   Search,
   ShoppingCart,
-  Menu,
   Plus,
 } from "lucide-react";
 import Link from "next/link";
@@ -21,7 +20,6 @@ export default function Navbar() {
     null
   );
   const [scrolled, setScrolled] = useState(false);
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -50,12 +48,12 @@ export default function Navbar() {
   };
 
   const navigationItems = [
-    { name: "Home", href: "#" },
+    { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     { name: "Shop", href: "#" },
     { name: "Pages", href: "#" },
     { name: "Blog", href: "#" },
-    { name: "Contact Us", href: "#" },
+    { name: "Contact Us", href: "/contact" },
   ];
 
   const socialLinks = [
@@ -148,8 +146,6 @@ export default function Navbar() {
     </nav>
   );
 
-  const InlinePopup = () => <div className="">Wt</div>;
-
   return (
     <header className="w-full flex flex-col">
       {/* Top Nav */}
@@ -206,18 +202,6 @@ export default function Navbar() {
                   <Search className="h-5 w-5" />
                 </Button>
 
-                <div className="relative">
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="text-white hover:text-orange-500"
-                    onClick={() => setIsPopupOpen(!isPopupOpen)}
-                  >
-                    <Menu className="h-6 w-6" />
-                  </Button>
-                  {isPopupOpen && <InlinePopup />}
-                </div>
-
                 <Button
                   variant="ghost"
                   size="icon"
@@ -260,18 +244,6 @@ export default function Navbar() {
             >
               <Search className="h-5 w-5" />
             </Button>
-
-            <div className="relative">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="text-gray-800 hover:text-orange-500"
-                onClick={() => setIsPopupOpen(!isPopupOpen)}
-              >
-                <Menu className="h-6 w-6" />
-              </Button>
-              {isPopupOpen && <InlinePopup />}
-            </div>
 
             <Button
               variant="ghost"
