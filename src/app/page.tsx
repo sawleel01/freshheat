@@ -12,20 +12,12 @@ import Special from "@/components/HomePage/special";
 import Timer from "@/components/HomePage/timer";
 import Imageslider from "@/components/HomePage/imagemarquee";
 import NewsSlider from "@/components/HomePage/latestnews/news slider";
+import CustomCursor from "@/components/CustomCursor/customcursor";
 
 export default function Home() {
   return (
     <>
-      <AnimatedCursor
-        innerSize={8}
-        outerSize={35}
-        innerScale={1}
-        outerScale={2}
-        outerAlpha={0.2}
-        innerStyle={{ backgroundColor: "#ff0000" }} // Red inner cursor
-        outerStyle={{ border: "2px solid #ff0000" }} // Red outer ring
-        clickables={["a", "button", "input", "textarea", "select", "label"]}
-      />
+      <CustomCursor />
       <div className="bg-stone-100">
         <Navbar />
         <Welcome />

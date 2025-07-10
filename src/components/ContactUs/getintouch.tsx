@@ -1,9 +1,10 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "../ui/button";
-import { Checkbox } from "@radix-ui/react-checkbox";
+
 import { Textarea } from "../ui/textarea";
 import { Input } from "../ui/input";
 import Image from "next/image";
+import { Checkbox } from "../ui/checkbox";
 
 export default function GetInTouch() {
   return (
@@ -20,7 +21,10 @@ export default function GetInTouch() {
           </div>
 
           <div className="w-11/12">
-            <form className="space-y-6 mr-20 rounded-lg shadow-lg  gap-4 px-10">
+            <form className="space-y-6 mr-20 rounded-lg shadow-2xl  gap-4 px-10 py-10">
+              <div>
+                <span className="font-extrabold text-2xl">Get In Touch</span>
+              </div>
               <div className="grid grid-cols-1 sm:grid-cols-2">
                 <Input
                   type="text"
@@ -65,7 +69,7 @@ export default function GetInTouch() {
 
               <Button
                 type="submit"
-                className="w-full h-12 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg flex items-center justify-center gap-2"
+                className="w-11/12 h-12 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg flex items-center justify-center gap-2"
               >
                 SUBMIT NOW
                 <ArrowRight className="w-4 h-4" />

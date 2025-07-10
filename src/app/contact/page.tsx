@@ -1,6 +1,7 @@
 import ContactDetails from "@/components/ContactUs/contactdetails";
 import ContactUsHeroSection from "@/components/ContactUs/contactHero";
 import GetInTouch from "@/components/ContactUs/getintouch";
+import Map from "@/components/ContactUs/map";
 import Footer from "@/components/HomePage/footer";
 import Navbar from "@/components/HomePage/navbar";
 import AnimatedCursor from "react-animated-cursor";
@@ -24,6 +25,7 @@ export default function ContactUsPage() {
         <ContactUsHeroSection />
         <ContactDetails />
         <GetInTouch />
+        <Map />
         <Footer />
       </div>
     </>

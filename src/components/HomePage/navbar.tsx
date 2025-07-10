@@ -208,10 +208,12 @@ export default function Navbar() {
                   className="text-white hover:text-orange-500 relative"
                 >
                   <ShoppingCart className="h-5 w-5" />
-                  <span className="absolute -top-1 -right-1 bg-orange-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-medium">
-                    3
-                  </span>
                 </Button>
+                <Link href="myaccount" passHref>
+                  <button className="bg-red-500 text-white px-4 py-2 rounded">
+                    Login
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -251,10 +253,12 @@ export default function Navbar() {
               className="text-gray-800 hover:text-orange-500 relative"
             >
               <ShoppingCart className="h-5 w-5" />
-              <span className="absolute -top-1 -right-1 bg-orange-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-medium">
-                3
-              </span>
             </Button>
+            <Link href="/myaccount" passHref>
+              <button className="bg-red-500 text-white px-4 py-2 rounded">
+                Login
+              </button>
+            </Link>
           </div>
         </div>
       </div>
