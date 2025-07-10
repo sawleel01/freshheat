@@ -1,5 +1,5 @@
 import ContactDetails from "@/components/ContactUs/contactdetails";
-import ContactUsHeroSection from "@/components/ContactUs/contactHero";
+import ContactUsHeroSection from "@/components/ContactUs/contactintro";
 import GetInTouch from "@/components/ContactUs/getintouch";
 import Map from "@/components/ContactUs/map";
 import Footer from "@/components/HomePage/footer";

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function MyAccountIntro() {
+export default function CheckoutIntro() {
   return (
     <div className="relative bg-[url('/breadcumb.jpg')] bg-no-repeat bg-top bg-cover h-[500px] w-screen">
       {/* Optional: Add a dark overlay for better text contrast */}
@@ -8,7 +8,7 @@ export default function MyAccountIntro() {
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center space-y-4">
         <h1 className="text-white text-5xl md:text-7xl font-extrabold uppercase">
-          My Account
+          Checkout
         </h1>
 
         <span className="text-white text-sm md:text-base">
@@ -16,11 +16,8 @@ export default function MyAccountIntro() {
             Home
           </Link>
           <span className="mx-1">/</span>
-          <Link
-            href="/myaccount"
-            className="hover:underline hover:text-red-500"
-          >
-            My Account
+          <Link href="/checkout" className="hover:underline hover:text-red-500">
+            Checkout
           </Link>
         </span>
       </div>

@@ -202,13 +202,15 @@ export default function Navbar() {
                   <Search className="h-5 w-5" />
                 </Button>
 
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="text-white hover:text-orange-500 relative"
-                >
-                  <ShoppingCart className="h-5 w-5" />
-                </Button>
+                <Link href="checkout" passHref>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="text-white hover:text-orange-500 relative"
+                  >
+                    <ShoppingCart className="h-5 w-5" />
+                  </Button>
+                </Link>
                 <Link href="myaccount" passHref>
                   <button className="bg-red-500 text-white px-4 py-2 rounded">
                     Login

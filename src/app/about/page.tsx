@@ -1,4 +1,4 @@
-import AboutHeroSection from "@/components/AboutUs/heroSection";
+import AboutHeroSection from "@/components/AboutUs/aboutusintro";
 import AboutUs from "../../components/HomePage/aboutus";
 import LimitedTimeOffers from "../../components/HomePage/limitedtimeoffer";
 import Navbar from "@/components/HomePage/navbar";
