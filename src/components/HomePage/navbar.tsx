@@ -32,8 +32,7 @@ export default function Navbar() {
   const dropdownItems = {
     Shop: ["All Products", "Categories", "New Arrivals", "Best Sellers"],
     Pages: [
-      "1",
-      "2",
+      "oolo",
       "3",
       {
         name: "4",
@@ -202,7 +201,7 @@ export default function Navbar() {
                   <Search className="h-5 w-5" />
                 </Button>
 
-                <Link href="checkout" passHref>
+                <Link href="/checkout" passHref>
                   <Button
                     variant="ghost"
                     size="icon"
@@ -249,13 +248,15 @@ export default function Navbar() {
               <Search className="h-5 w-5" />
             </Button>
 
-            <Button
-              variant="ghost"
-              size="icon"
-              className="text-gray-800 hover:text-orange-500 relative"
-            >
-              <ShoppingCart className="h-5 w-5" />
-            </Button>
+            <Link href="/checkout" passHref>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-gray-800 hover:text-orange-500 relative"
+              >
+                <ShoppingCart className="h-5 w-5" />
+              </Button>
+            </Link>
             <Link href="/myaccount" passHref>
               <button className="bg-red-500 text-white px-4 py-2 rounded">
                 Login
