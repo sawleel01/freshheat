@@ -23,7 +23,7 @@ export default function ChefSection() {
   return (
     <section className="py-16 px-4 bg-gray-200 relative overflow-hidden">
       {/* Decorative elements */}
-      <div className="w-40 h-40 absolute left-5 top-10 z-50 float-vertical">
+      <div className="w-40 h-40 absolute left-5 top-10 z-10 float-vertical">
         <Image
           src="/halftomato.png"
           alt="Half tomato and 2 leaves"

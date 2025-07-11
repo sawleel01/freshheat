@@ -1,19 +1,17 @@
-import CheckoutHero from "@/components/Checkout/checkouthero";
-import CheckoutIntro from "@/components/Checkout/checkoutintro";
-import OrderList from "@/components/Checkout/orderlist";
 import CustomCursor from "@/components/CustomCursor/customcursor";
+import FAQHeroSection from "@/components/faq/faqherosection";
+import FAQIntro from "@/components/faq/faqintro";
 import Footer from "@/components/HomePage/footer";
 import Navbar from "@/components/HomePage/navbar";
 
-export default function Checkout() {
+export default function FAQ() {
   return (
     <>
       <CustomCursor />
       <div className="bg-stone-200">
         <Navbar />
-        <CheckoutIntro />
-        <CheckoutHero />
-        <OrderList />
+        <FAQIntro />
+        <FAQHeroSection />
         <Footer />
       </div>
     </>
