@@ -1,5 +1,7 @@
 import CustomCursor from "@/components/CustomCursor/customcursor";
+import ChefSection from "@/components/HomePage/chefsection";
 import Footer from "@/components/HomePage/footer";
+import Imageslider from "@/components/HomePage/imagemarquee";
 import Navbar from "@/components/HomePage/navbar";
 import Timer from "@/components/HomePage/timer";
 import MenuHeroSection from "@/components/menu/menuherosection";
@@ -15,6 +17,8 @@ export default function MenuPage() {
         <div className="my-24"></div>
         <MenuHeroSection />
         <Timer />
+        <ChefSection />
+        <Imageslider />
         <Footer />
       </div>
     </>
